@@ -20,4 +20,18 @@ $console
     })
 ;
 
+$console
+    ->register('ip-verify')
+    ->setDefinition(array(
+        new InputOption('ip', null, InputOption::VALUE_REQUIRED, 'A valid IP address.')
+    ))
+    ->setDescription('Verifies if a given IP address is within the UCSF IP range, and returns the location that this address resolves to.')
+    ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
+        $ipAddress = $input->getOption('ip');
+        $verifier = $app['ip_net_verifier'];
+        $location = $verifier->getLocation($ipAddress) ?: 'Unknown';
+        $output->writeln('Location: ' . $location);
+    })
+;
+
 return $console;

@@ -7,6 +7,8 @@ use Silex\Provider\ValidatorServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\HttpFragmentServiceProvider;
 
+use UCSF\HelpApps\Service\IpNetVerifierService;
+
 $app = new Application();
 $app->register(new RoutingServiceProvider());
 $app->register(new ValidatorServiceProvider());
@@ -22,5 +24,15 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
 
     return $twig;
 });
+
+// register ip net verifier as a service
+$app['ip_net_verifier'] = function () {
+    return new IpNetVerifierService();
+};
+
+// register our controller as a service
+$app['ucsf.helpapps.controller'] = function() {
+    return new \UCSF\HelpApps\Controller\DefaultController();
+};
 
 return $app;
