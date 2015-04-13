@@ -35,3 +35,4 @@ $console
 ;
 
 return $console;
+
