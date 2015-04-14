@@ -4,7 +4,6 @@ namespace UCSF\HelpApps\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use UCSF\HelpApps\Service\IpNetVerifierService;
 
 class DefaultController
 {
