@@ -12,7 +12,7 @@ class DefaultController
     {
         $ipAddress = $request->get('ip_add', $request->getClientIp());
         $verifier = $app['ip_net_verifier'];
-        $location = $verifier->getLocation($ipAddress) ?: 'Unknown';
+        $location = $verifier->getLocation($ipAddress);
         return $app['twig']->render('helpapps/ipnetverify.twig', array(
                 'ip_address' => $ipAddress,
                 'location' => $location
