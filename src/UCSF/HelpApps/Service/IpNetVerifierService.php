@@ -16,6 +16,7 @@ class IpNetVerifierService
     const ITS_SSL_VPN_TEST = 'UCSF UCSF ITS SSL VPN Test System';
     const MED_CENTER = 'UCSF Medical Center';
     const MED_CENTER_CISCO_VPN = 'Medical Center Cisco VPN';
+    // TODO: What's the difference between 'med center network' and 'med center' locations? [ST 2015/04/14]
     const MED_CENTER_NETWORK = 'UCSF Medical Center Network';
     const MED_CENTER_WEB_VPN = 'Medical Center Web VPN';
     const MISSION_BAY_CAMPUS = 'UCSF Mission Bay Campus Network';
