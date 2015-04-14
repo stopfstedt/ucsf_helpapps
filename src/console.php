@@ -20,8 +20,13 @@ $console
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
         $ipAddress = $input->getOption('ip');
         $verifier = $app['ip_net_verifier'];
-        $location = $verifier->getLocation($ipAddress) ?: 'Unknown';
-        $output->writeln('Location: ' . $location);
+        $location = $verifier->getLocation($ipAddress);
+        if ($location) {
+            $output->writeln("The given IP address '{$ipAddress}'' is on the UCSF computing network.");
+            $output->writeln("The identified location within the network is '{$location}''");
+        } else {
+            $output->writeln("The given IP address '{$ipAddress}'' is not on the UCSF computing network.");
+        }
     })
 ;
 
