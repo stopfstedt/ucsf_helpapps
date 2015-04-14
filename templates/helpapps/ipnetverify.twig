@@ -1,6 +1,46 @@
 {% extends "layout.html" %}
-
 {% block content %}
-IP Address: {{ ip_address }}
-Location: {{ location }}
+    <h2 class="subhead2">Test <abbr title="Virtual Private Network">VPN</abbr></h2>
+    <p>
+        <a>The box below tests whether the Virtual Private Network (<abbr
+                    title="Virtual Private Network">VPN</abbr>)</a>
+        appears to be working at the time you visited (loaded) this web page.
+    </p>
+    {% if location %}
+        <p style="border:2px solid #933;padding:8px;background-color:#c0edb2">
+            <em>Yes</em>, you are on the UCSF computing network:<br><br>
+            You appear to be connecting from the IP address of: <strong>{{ ip_address }}></strong>
+            <br><br>
+            From this UCSF computing resources identify you as being connected from: <strong>{{ location }}</strong>
+            <br><br>
+            If you are having problems connecting to a site or network resource please contact your local CSC,
+            computer administrator or the ITS Help Desk and provide them the information found in this box. </p>
+    {% else %}
+        <p style="border:2px solid #933;padding:8px;background-color:#f0d3d3">
+            <em>No</em>, you are not on the UCSF computing network.
+            <br><br>
+            You look to be connecting from the IP address of: <strong>{{ ip_address }}</strong>
+            <br><br>
+            This shows either that you are not on the UCSF network, you are not using one of the UCSF
+            <abbr title="Virtual Private Network">VPN</abbr> services or your
+            <abbr title="Virtual Private Network">VPN</abbr> client is not working correctly. Web sites and computing
+            resources that require you to be on the UCSF network will not currently allow you access.
+            <br><br>
+            If you do not currently have access to the UCSF <abbr title="Virtual Private Network">VPN</abbr> systems
+            please review the <a href="/information/network/vpn/nortel/use/index.jsp">
+                <abbr title="Virtual Private Network">VPN</abbr> information</a> on this website. If you are currently
+            attempting to use the UCSF VPN system are having problems connecting to a site or network resource please
+            contact your local CSC, computer administrator or the ITS Help Desk and provide them the information found
+            in this box.
+        </p>
+    {% endif %}
+    <p>Testing your Java Virtual Machine (JVM)<br></p>
+    <p><applet code="JavaVersionTest.class" width="300" height="30"></applet>
+        <br/>
+        <br/>
+    </p>
+    <p class="goto">
+        <strong>Go To</strong>: <a href="http://vpn.ucsf.edu">Virtual Private Network
+        (<abbr title="Virtual Private Network">VPN</abbr>)</a>
+    </p>
 {% endblock %}
