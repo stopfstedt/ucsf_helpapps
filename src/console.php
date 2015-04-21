@@ -37,7 +37,7 @@ $console
     ->setCode(
         function (InputInterface $input, OutputInterface $output) use ($app) {
             $ipAddress = $input->getOption('ip');
-            $verifier = $app['ip_net_verifier'];
+            $verifier = $app['ucsf.helpapps.services.ip_net_verifier'];
             $location = $verifier->getLocation($ipAddress);
             if ($location) {
                 $output->writeln(
