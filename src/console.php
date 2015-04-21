@@ -48,7 +48,7 @@ $console
                 );
             } else {
                 $output->writeln(
-                    "The given IP address '{$ipAddress}'' is not on the UCSF computing network."
+                    "The given IP address '{$ipAddress}' is not on the UCSF computing network."
                 );
             }
         }
