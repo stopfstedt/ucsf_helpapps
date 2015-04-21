@@ -10,7 +10,7 @@ class DefaultController
     public function ipNetVerifyAction(Request $request, Application $app)
     {
         $ipAddress = $request->get('ip_add', $request->getClientIp());
-        $verifier = $app['ip_net_verifier'];
+        $verifier = $app['ucsf.helpapps.services.ip_net_verifier'];
         $location = $verifier->getLocation($ipAddress);
         return $app['twig']->render('helpapps/ipnetverify.twig', array(
                 'ip_address' => $ipAddress,
