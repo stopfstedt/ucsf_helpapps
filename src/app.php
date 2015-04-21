@@ -26,7 +26,7 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
 });
 
 // register ip net verifier as a service
-$app['ip_net_verifier'] = function () {
+$app['ucsf.helpapps.services.ip_net_verifier'] = function () {
     return new IpNetVerifierService();
 };
 
