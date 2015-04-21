@@ -29,7 +29,7 @@ class IpNetVerifierService
     /**
      * Resolves and returns a location for a given IPv4 address.
      * @param string $ipAddress The given IP address.
-     * @return string|bool The location that the given IP address is resolving to, or FALSE is no location can be found.
+     * @return string|bool The location that the given IP address is resolving to, or FALSE if no location can be found.
      */
     public function getLocation($ipAddress)
     {
