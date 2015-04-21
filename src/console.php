@@ -44,7 +44,7 @@ $console
                     "The given IP address '{$ipAddress}' is on the UCSF computing network."
                 );
                 $output->writeln(
-                    "The identified location within the network is '{$location}'"
+                    "The identified location within the network is '{$location}'."
                 );
             } else {
                 $output->writeln(
